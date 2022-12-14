@@ -37,6 +37,29 @@ namespace ProgrammingCheatSheet
                 list.Add(i);
             }
 
+            // Simple random funktion
+            Random rnd = new Random();
+
+            for (int j = 0; j < 4; j++)
+            {
+                Console.WriteLine(rnd.Next());
+            }
+
+            // dies würde zahlen von 10 bis 100 generieren
+            rnd.Next(10, 100);
+
+            // foreach beispiel
+
+            //foreach (Datentyp bezeichner in ArrayName)
+            //    {
+            //          Console.WriteLine(bezeichner);
+            //    }
+
+            // foreach beispiel mit unserem array
+            foreach (int item in numberArray)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private void btn_SchreibeLinie_Click(object sender, EventArgs e)
@@ -60,6 +83,7 @@ namespace ProgrammingCheatSheet
 
         private void btn_ZeichneRaute_Click(object sender, EventArgs e)
         {
+            // Den text der richTextBox1 mit dem return wert der methode ZeichneRaute füllen, der wir 10 übergeben
             richTextBox1.Text = ZeichneRaute(10);
         }
 
@@ -94,10 +118,12 @@ namespace ProgrammingCheatSheet
         // MIT RÜCKGABE, MIT PARAMETER - als string deklariert, datentyp kann beliebig gesetzt werden und muss für den return wert passen
         static string ZeichneRaute(int pLaenge)
         {
+            // string variable deklariert und leer initialisiert
             string myText = "";
 
             for (int i = 0; i < pLaenge; i++)
             {
+                // an text etwas ranhängen; text ist gleich text + drangehangene zeichen
                 myText = myText + "#";
             }
             return myText;
